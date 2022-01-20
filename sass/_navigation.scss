@@ -1,0 +1,52 @@
+.navigation {
+  grid-column: 2 / -1;
+  padding: 0rem 5rem 0rem 1rem;
+  border-bottom: $line;
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    list-style: none;
+    padding-left: 1rem;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      padding-right: 1rem;
+    }
+    &:last-child {
+      margin-left: auto;
+    }
+  }
+  &__link--icon {
+    margin-right: 0.5rem;
+    height: 2.3rem;
+    width: 2.3rem;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      height: 9rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $color-grey-light;
+      transition: all 0.3s;
+      @include flex-center;
+      border-bottom: 3px solid transparent;
+    }
+
+    &--active:link,
+    &--active:visited {
+      font-weight: 600;
+      color: $color-grey-dark;
+      border-bottom: 3px solid $color-primary;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-grey-dark;
+      border-bottom: 3px solid $color-primary;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.card {
+  display: flex;
+  background-color: $color-white;
+  border-radius: 0.5rem;
+
+  gap: 2rem;
+  padding: 2rem;
+  box-shadow: $dark-shadow;
+  &:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+
+  &__img {
+    img {
+      display: block;
+      width: 16rem;
+      height: 16rem;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+
+  &__detail {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+    margin-right: auto;
+  }
+  &__title {
+    margin-top: -0.5rem;
+    font-weight: 600;
+    margin-bottom: auto;
+  }
+  &__text-box {
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+  }
+  &__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-right: 1rem;
+    color: $color-grey-light-2;
+  }
+  &__text {
+    margin-right: 0.5rem;
+    color: #555;
+  }
+  &__value {
+    font-weight: 100;
+    color: #aaa;
+  }
+  &__btn {
+    align-self: flex-end;
+    padding: 0.6rem 2rem;
+  }
+}

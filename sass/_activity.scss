@@ -1,0 +1,78 @@
+.activity {
+  background-color: $color-white;
+  padding: 1rem 5rem 1rem 2rem;
+  box-shadow: $dark-shadow;
+  border-radius: 0.5rem;
+  height: 65rem;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-primary;
+    border-radius: 0.5rem;
+  }
+
+  &__heading {
+    border-bottom: $line;
+    padding: 1rem 0;
+    margin-bottom: 3.5rem;
+    color: #777;
+  }
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    border-left: $line;
+    // padding-left: 0.5rem;
+    margin-left: 1rem;
+    padding: 0 0.5rem;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: 2rem;
+    position: relative;
+    margin-top: -1rem;
+    &::before {
+      content: "";
+      height: 1rem;
+      width: 1rem;
+      border-radius: 50%;
+      outline-offset: 0.5rem;
+      outline: 1px solid currentColor;
+      position: absolute;
+      top: 0.8rem;
+      left: -3.065rem;
+    }
+    &:nth-child(3n + 2)::before {
+      color: $color-primary;
+      background-color: $color-primary;
+    }
+
+    &:nth-child(3n + 3)::before {
+      color: $color-secondary;
+      background-color: $color-secondary;
+    }
+
+    &:nth-child(3n + 1)::before {
+      color: $color-blue;
+      background-color: $color-blue;
+    }
+  }
+  &__title {
+    font-size: 1.8rem;
+    color: #777;
+    font-weight: 600;
+  }
+  &__subtitle {
+    font-size: 1.7rem;
+    color: #999;
+  }
+  &__time {
+    font-size: 1.5rem;
+    color: $color-grey-light;
+  }
+}

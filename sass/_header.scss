@@ -1,0 +1,224 @@
+.header {
+  background-color: #aaa;
+  grid-column: 1 / -1;
+  padding: 3rem 5rem 1rem 5rem;
+
+  background-image: linear-gradient(
+      rgba($color-black, 0.5),
+      rgba($color-black, 0.5)
+    ),
+    url(../img/bg.jpg);
+  background-size: cover;
+  background-position: center right;
+
+  &-top {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+
+    &__chatbox {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    &__icon {
+      height: 3rem;
+      width: 3rem;
+      color: $color-white;
+      &--notify {
+        color: #bbb;
+      }
+      &--dot {
+        position: relative;
+        top: 0.5rem;
+        &::after {
+          content: "";
+          height: 0.8rem;
+          width: 0.8rem;
+          //   padding: 1rem;
+          border: 1px solid $color-white;
+          border-radius: 50%;
+          background-color: $color-primary;
+          position: absolute;
+          top: 0.3rem;
+          right: 0.3rem;
+          z-index: 10;
+        }
+      }
+      &--camera {
+        height: 2.5rem;
+        width: 2.5rem;
+        color: $color-grey-light;
+      }
+    }
+
+    &__text {
+      color: $color-white;
+    }
+
+    &__btn {
+      margin-left: auto;
+      color: $color-grey-light;
+      background-color: rgba($color-white, 0.15);
+      &:hover {
+        background-color: rgba($color-white, 0.25);
+      }
+    }
+
+    &__img {
+      border: 0.3rem;
+      @include flex-center;
+      img {
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 0.3rem;
+        object-fit: cover;
+        object-position: top;
+      }
+    }
+  }
+
+  //User Deatails
+  &__content {
+    display: flex;
+    align-items: flex-end;
+    gap: 3rem;
+  }
+
+  &__img {
+    position: relative;
+    top: 6.5rem;
+
+    img {
+      height: 26rem;
+      width: 25rem;
+      border-radius: 0.5rem;
+      object-fit: cover;
+      object-position: top;
+      box-shadow: $dark-shadow;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 1.5rem;
+  }
+  &__text {
+    color: $color-grey-light;
+  }
+  &__value {
+    color: $color-grey-light-2;
+  }
+
+  //Last block of header
+  &__block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    align-self: flex-end;
+    gap: 2rem;
+    margin-left: auto;
+  }
+
+  &__progressbox {
+    display: flex;
+    padding: 3rem;
+    background-color: rgba($color-white, 0.3);
+    border-radius: 0.5rem;
+    gap: 2rem;
+  }
+
+  .progress {
+    position: relative;
+    height: 11rem;
+    &__ring {
+      width: 11rem;
+      height: 11rem;
+    }
+    &__circle {
+      fill: transparent;
+      // 2*pi*r = 2 * 3.14 * 50 = 314px
+      $circumference: 31.4rem;
+      stroke-dasharray: $circumference;
+      // stroke-dashoffset: $circumference; // 0 Progress
+      stroke-width: 0.5rem;
+      stroke-dashoffset: 0;
+      stroke: rgba($color-grey-light, 0.5);
+      &-bar {
+        stroke-dashoffset: $circumference - (75 * ($circumference/100));
+        stroke: $color-primary;
+      }
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &::before {
+      content: "75%";
+      color: $color-grey-light-2;
+      font-size: 1.8rem;
+    }
+
+    &::after {
+      content: "";
+      background-color: rgba($color-white, 0.25);
+      border-radius: 50%;
+      height: 7rem;
+      width: 7rem;
+    }
+
+    &__border {
+      border: 0.5rem solid $color-primary;
+      height: 10rem;
+      width: 10rem;
+      border-radius: 50%;
+      border-right: 0.5rem solid rgba($color-grey-light, 0.5);
+      transform: rotate(-45deg);
+      @include flex-center;
+    }
+    &__per {
+      font-weight: 100;
+      font-size: 2rem;
+      padding: 1.5rem;
+      text-align: center;
+      color: $color-grey-light-2;
+      transform: rotate(45deg);
+      border-radius: 50%;
+      background-color: rgba($color-white, 0.15);
+    }
+    &__info {
+      display: flex;
+      flex-direction: column;
+    }
+    &__title {
+      color: #eee;
+      font-size: 1.8rem;
+      font-weight: 300;
+    }
+    &__subtitle {
+      font-size: 1.4rem;
+      color: $color-grey-light;
+      margin-bottom: auto;
+    }
+    &__btn {
+      align-self: flex-start;
+    }
+  }
+  &__icon-box {
+    height: 3.5rem;
+    width: 3.5rem;
+    @include flex-center;
+    background-color: rgba($color-white, 0.15);
+    border-radius: 3px;
+    padding: 0.4rem;
+  }
+}

@@ -1,0 +1,42 @@
+//COLORS
+$color-primary: #fea428;
+$color-secondary: #18d39f;
+$color-blue: #7476f5;
+$color-grey-dark: #333;
+$color-grey-light: #bbb;
+$color-grey-light-2: #ddd;
+
+$color-black: #000;
+$color-white: #fff;
+
+$line: 1px solid $color-grey-light-2;
+
+$dark-shadow: 0 2rem 4rem rgba($color-black, 0.05);
+
+//Global Setup
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  //1rem = 10px
+  font-size: 62.5%;
+}
+
+body {
+  font-weight: 300;
+  line-height: 1.6;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 36rem repeat(3, 1fr);
+}
